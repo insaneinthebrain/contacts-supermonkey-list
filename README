@@ -1,0 +1,11 @@
+Hello there.
+
+This program is a simple c++/Qt Gui contacts list manager which I wrote to further my c++ learning.
+I am sharing the source incase it may prove usefull to anyone else learning c++
+
+I have included a sample contacts.txt list, though you can also create your own, 
+or allow the program to automatically create a blank one for you.
+the contacts.txt file will go in the directory the program is compiled into.
+
+
+This program was created using Qt Creator.
