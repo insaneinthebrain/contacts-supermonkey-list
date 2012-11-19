@@ -194,7 +194,7 @@ void MainWindow::on_btnSearch_clicked()
 
 
          for(row=0; row<200; row++){
-             storid[row]=NULL;
+             storid[row] = 0;
          }
          row=0;
          fid=1;
