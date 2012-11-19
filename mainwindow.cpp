@@ -47,9 +47,7 @@ void MainWindow::Populate_List()
 
 void MainWindow::Unpopulate_List()
 {
-    ui->tableWidget->setItem(row, 0, new QTableWidgetItem (tr("").arg(row, 0)));
-    ui->tableWidget->setItem(row, 1, new QTableWidgetItem (tr("").arg(row, 1)));
-    ui->tableWidget->setItem(row, 2, new QTableWidgetItem (tr("").arg(row, 2)));
+    ui->tableWidget->clear();
 }
 
 
