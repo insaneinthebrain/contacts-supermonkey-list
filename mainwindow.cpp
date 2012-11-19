@@ -21,20 +21,14 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::Populate_List()
+void MainWindow::Populate_Row()
 {
-
     if(name=="()")name="";
     if(phone=="()")phone="";
     if(email=="()")email="";
-
-    cname = (char*)name.c_str();
-    cphone = (char*)phone.c_str();
-    cemail = (char*)email.c_str();
-
-         ui->tableWidget->setItem(row, 0, new QTableWidgetItem (tr(cname).arg(row, 0)));
-         ui->tableWidget->setItem(row, 1, new QTableWidgetItem (tr(cphone).arg(row, 1)));
-         ui->tableWidget->setItem(row, 2, new QTableWidgetItem (tr(cemail).arg(row, 2)));
+    ui->tableWidget->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(name)));
+    ui->tableWidget->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(phone)));
+    ui->tableWidget->setItem(row, 2, new QTableWidgetItem(QString::fromStdString(email)));
 }
 
 
@@ -58,7 +52,7 @@ void MainWindow::on_btnReload_clicked()
 
     while(rdfile >> fid, getline(rdfile, name, '|'),getline(rdfile, phone, '|'),getline(rdfile, email)){
 
-            Populate_List();
+            Populate_Row();
             row++;
       }
             rdfile.close();
@@ -134,7 +128,7 @@ void MainWindow::on_btnSave_clicked()
 
             while(rdfile >> fid, getline(rdfile, name, '|'),getline(rdfile, phone, '|'),getline(rdfile, email)){
 
-                Populate_List();
+                Populate_Row();
 
                 if(storid[countid] == fid){
 
@@ -194,7 +188,7 @@ void MainWindow::on_btnSearch_clicked()
 
            if(findthisstr.find(name)!=name.find(findthisstr) || findthisstr.find(phone)!=phone.find(findthisstr) || findthisstr.find(email)!=email.find(findthisstr)){
 
-                    Populate_List();
+                    Populate_Row();
                     storid[row]=fid;
                     row++;
                     found=true;
