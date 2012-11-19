@@ -1,7 +1,7 @@
 #ifndef MESSAGES_H
 #define MESSAGES_H
 
-#include "ui_mainwindow.h"
+#include <QString>
 
 class Messages
 {

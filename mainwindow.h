@@ -5,6 +5,7 @@
 #include "ui_mainwindow.h"
 #include "messages.h"
 #include <fstream>
+#include <string>
 
 namespace Ui {
 class MainWindow;
