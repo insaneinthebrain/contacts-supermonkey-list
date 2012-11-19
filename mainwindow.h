@@ -5,6 +5,7 @@
 #include "ui_mainwindow.h"
 #include "messages.h"
 #include <fstream>
+#include <string>
 
 namespace Ui {
 class MainWindow;
@@ -35,16 +36,13 @@ private slots:
     void on_txtBoxSearch_returnPressed();
 
 private:
-    void Populate_List();
+    void Populate_Row();
     void Unpopulate_List();
     Ui::MainWindow *ui;
 
     Messages msg;
     std::ifstream rdfile;
     std::ofstream myfile;
-    char *cname;
-    char *cphone;
-    char *cemail;
     QTableWidgetItem *sname;
     QTableWidgetItem *sphone;
     QTableWidgetItem *semail;
